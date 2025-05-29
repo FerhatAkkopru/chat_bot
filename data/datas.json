@@ -1,0 +1,117 @@
+[
+  {
+    "id": 1,
+    "soru": "Eksik verilerle başa çıkmak için hangi yöntemleri kullanabilirim?",
+    "cevap": "Eksik veriler doldurulabilir (medyan, mod, 0, null) veya silinebilir."
+  },
+  {
+    "id": 2,
+    "soru": "Veri kümesindeki aykırı değerleri nasıl tespit edebilirim?",
+    "cevap": "Aykırı değerler, kutu grafiği, Z-skoru veya IQR yöntemi ile tespit edilebilir."
+  },
+  {
+    "id": 3,
+    "soru": "Veri kümesindeki kategorik değişkenleri nasıl sayısal hale getirebilirim?",
+    "cevap": "Kategorik değişkenler, etiket kodlama veya one-hot kodlama ile sayısal verilere dönüştürülebilir."
+  },
+  {
+    "id": 4,
+    "soru": "Veri normalizasyonu nedir ve neden önemlidir?",
+    "cevap": "Veri normalizasyonu, verilerin belirli bir aralığa (genellikle 0-1) dönüştürülmesidir. Bu, modelin değişkenlere benzer önemi vermesini sağlar."
+  },
+  {
+    "id": 5,
+    "soru": "R^2 değeri nedir?",
+    "cevap": "R^2 değeri, modelin bağımlı değişkenin varyansını ne kadar açıkladığını gösterir. 0 ile 1 arasında bir değer alır; 1'e yakınsa model iyi bir uyum sağlar."
+  },
+  {
+    "id": 6,
+    "soru": "Lineer regresyonda overfitting nasıl önlenir?",
+    "cevap": "Ridge ve Lasso kullanılarak overfitting önlenebilir."
+  },
+  {
+    "id": 7,
+    "soru": "Veri kümesindeki değişkenler arasındaki ilişkiyi nasıl analiz edebilirim?",
+    "cevap": "Değişkenler arasındaki ilişki, korelasyon analizi, scatter plot veya regresyon analizi ile incelenebilir."
+  },
+  {
+    "id": 8,
+    "soru": "Veri kümesindeki değişkenlerin dağılımını nasıl görselleştirebilirim?",
+    "cevap": "Değişkenlerin dağılımı, histogram, kutu grafiği veya yoğunluk grafiği ile görselleştirilebilir."
+  },
+  {
+    "id": 9,
+    "soru": "Makine öğrenmesinde model performansını nasıl değerlendiririm?",
+    "cevap": "Model performansı, accuracy, precision, recall, F1 skoru ve ROC eğrisi gibi metriklerle değerlendirilebilir."
+  },
+  {
+    "id": 10,
+    "soru": "Makine öğrenmesi ile yapay zeka arasındaki fark nedir?",
+    "cevap": "Makine öğrenmesi, verilerden öğrenme yeteneği olan bir yapay zeka alt alanıdır. Yapay zeka ise, insan benzeri zeka sergileyen sistemleri kapsar."
+  },
+  {
+    "id": 11,
+    "soru": "Sigmoid fonksiyonu nedir?",
+    "cevap": "Sigmoid fonksiyonu, 0 ile 1 arasında değerler üreten bir fonksiyondur. Genellikle ikili sınıflandırma problemlerinde kullanılır."
+  },
+  {
+    "id": 12,
+    "soru": "Sürekli veri nedir ve nasıl işlenir?",
+    "cevap": "Sürekli veri, belirli bir aralıkta sonsuz sayıda değere sahip olan verilerdir. Sürekli veriler, normalizasyon veya standartlaştırma gibi yöntemlerle işlenebilir."
+  },
+  {
+    "id": 13,
+    "soru": "Kümeleme algoritmaları nelerdir?",
+    "cevap": "Kümeleme algoritmaları, K-means, DBSCAN, hiyerarşik kümeleme ve Gaussian karışım modelleridir."
+  },
+  {
+    "id": 14,
+    "soru": "Doğrusal regresyon ile lojistik regresyon arasındaki fark nedir?",
+    "cevap": "Doğrusal regresyon, sürekli bir bağımlı değişkeni tahmin ederken; lojistik regresyon, ikili sınıflandırma problemlerinde kullanılır."
+  },
+  {
+    "id": 15,
+    "soru": "Veri madenciliği nedir?",
+    "cevap": "Veri madenciliği, büyük veri setlerinden anlamlı bilgiler ve kalıplar çıkarmak için kullanılan tekniklerdir."
+  },
+  {
+    "id": 16,
+    "soru": "KNN algoritması nedir?",
+    "cevap": "KNN (K-en yakın komşu) algoritması, bir veri noktasının sınıfını, en yakın K komşusunun sınıflarına göre belirleyen bir sınıflandırma algoritmasıdır."
+  },
+  {
+    "id": 17,
+    "soru": "Alpha değeri nedir ve Ridge ve Lasso regresyonda nasıl kullanılır?",
+    "cevap": "Alpha değeri, Ridge ve Lasso regresyonunda düzenleme terimini kontrol eden bir hiperparametredir. Alpha değeri arttıkça, modelin karmaşıklığı azalır ve aşırı öğrenme riski düşer."
+  },
+  {
+    "id": 18,
+    "soru": "Aşırı öğrenme (overfitting) nedir ve nasıl önlenir?",
+    "cevap": "Aşırı öğrenme, modelin eğitim verisine çok iyi uyum sağlaması ancak yeni verilere kötü performans göstermesidir. Bu, daha fazla veri toplamak, model karmaşıklığını azaltmak veya düzenleme yöntemleri kullanarak önlenebilir."
+  },
+  {
+    "id": 19,
+    "soru": "Cross-validation nedir ve neden önemlidir?",
+    "cevap": "Cross-validation, modelin genel performansını değerlendirmek için veri kümesini birden fazla alt küme ile test etmeyi sağlayan bir tekniktir. Bu, modelin aşırı öğrenme riskini azaltır ve daha güvenilir sonuçlar sağlar."
+  },
+  {
+    "id": 20,
+    "soru": "Feature engineering nedir?",
+    "cevap": "Feature engineering, modelin performansını artırmak için verilerden yeni özellikler oluşturma sürecidir. Bu, veri kümesinin daha iyi anlaşılmasını ve modelin daha iyi öğrenmesini sağlar."
+  },
+  {
+    "id": "60411515-da90-4773-81cb-fce93a5a95aa",
+    "soru": "makine öğrenmesi nedir?",
+    "cevap": "Makine öğrenmesi, bir bilgisayarın belirli bir görevi insan müdahalesi olmadan veya belirli talimatlar almadan yerine getirebilmesi için algoritma ve modeller kullanarak verilerden öğrenme yeteneğidir. Bu veriler sayesinde makine öğrenmesi algoritmaları, desenleri tespit edebilir, kararlar alabilir ve tahminler yapabilir. Bu algoritmalara örnek olarak destek vektör makineleri, karar ağaçları, sinir ağları ve k-means gibi yöntemler verilebilir. Makine öğrenmesi, geniş bir yelpazede uygulama alanlarına sahiptir ve yapay zeka çalışmalarının temelini oluşturur."
+  },
+  {
+    "id": "8be40566-8912-43aa-b40f-141930781d1e",
+    "soru": "regresyon türleri nelerdir",
+    "cevap": "Regresyon analizi, bağımlı bir değişken ile bir veya daha fazla bağımsız değişken arasındaki ilişkiyi inceleyen istatistiksel bir yöntemdir. Regresyon türleri şunlardır:\n\n1. Doğrusal Regresyon: Bağımlı değişken ile bağımsız değişken arasındaki ilişki doğrusal olarak modellendirilir.\n2. Polinom Regresyon: Doğrusal regresyondan farklı olarak, polinom regresyonunda bağımlı değişken ile bağımsız değişken arasındaki ilişki polinom denklemi ile ifade edilir.\n3. Lojistik Regresyon: Bağımlı değişken kategorik olduğunda kullanılan bir regresyon türüdür. Sonuç olasılık değerleri olarak verilir.\n4. Ridge Regresyon: Aşırı uyum problemlerini ve değişken seçimi sorunlarını çözmek için kullanılan bir regresyon türüdür.\n5. Lasso Regresyon: Ridge regresyonuna benzer şekilde aşırı uyum problemlerini çözmek için kullanılan fakat değişken seçiminde daha sıkı kısıtlamalar getiren bir regresyon türüdür.\n6. Elastic Net Regresyon: Ridge ve Lasso regresyonlarının birleşimi olarak kullanılır, avantajlarını bir araya getirir.\n\nBu regresyon türleri, verilerinizin yapısına ve analiz amacınıza göre tercih edilebilir."
+  },
+  {
+    "id": "0679d109-e681-4d94-b18f-0873ec52f660",
+    "soru": "veri ön işleme nedir?",
+    "cevap": "Veri ön işleme, makine öğrenmesi ve veri madenciliği projelerinde veri setinin temizlenmesi, dönüştürülmesi ve hazırlanması sürecidir. Veri ön işleme aşamasında eksik verilerin doldurulması, aykırı değerlerin tespit edilip düzeltilmesi, veri normalizasyonu, veri standardizasyonu gibi işlemler gerçekleştirilir. Veri ön işleme, veri setinin analiz ve modelleme için daha uygun hale getirilmesini sağlar ve sonuç olarak daha iyi ve güvenilir sonuçlar elde edilmesini sağlar."
+  }
+]
