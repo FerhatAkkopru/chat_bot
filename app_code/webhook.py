@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 import numpy as np
+from datetime import datetime
 import time
 import pickle
 import faiss
@@ -8,7 +9,8 @@ from sentence_transformers import SentenceTransformer
 from app_code.is_tech import is_technical_question
 from app_code.openai_integration import get_gpt_answer
 from app_code.data_utils import add_question
-import os # os modülünü import edin
+import os 
+from app_code.data_utils import validate_user_from_file, save_login_data
 
 app = FastAPI()
 
@@ -16,6 +18,7 @@ METADATA_FILE = "data/metadata.pkl"
 FAISS_FILE = "data/faiss_index.index"
 SIMILARITY_THRESHOLD = 0.8
 model = SentenceTransformer("sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
+
 
 def process_user_question(user_question: str) -> str:
     start = time.time()
@@ -75,6 +78,28 @@ def process_user_question(user_question: str) -> str:
             return f"⚠️ Benzer soru bulunamadı veya ilk çalıştırma. GPT'den cevap alındı ve kaydedildi:\n{gpt_answer}\n(Süre: {end - start:.2f} saniye)"
         else:
             return "Bu sistem yalnızca teknik sorulara cevap verir."
+
+@app.post("/login")
+async def login(request: Request):
+    try:
+        body = await request.json()
+        email = body.get("email")
+        password = body.get("password")
+
+        if not email or not password:
+            return JSONResponse(content={"status": "error", "message": "E-posta ve şifre gerekli."}, status_code=400)
+
+        if validate_user_from_file(email, password):
+            save_login_data(email, datetime.now().isoformat())
+            return JSONResponse(content={"status": "success", "message": "Giriş başarılı!"})
+        else:
+            return JSONResponse(content={"status": "fail", "message": "E-posta veya şifre yanlış."}, status_code=401)
+
+    except Exception as e:
+        print(f"🚨 Hata (login): {str(e)}")
+        return JSONResponse(content={"status": "error", "message": f"Hata oluştu: {str(e)}"}, status_code=500)
+
+
 
 @app.post("/webhook")
 async def webhook(request: Request):

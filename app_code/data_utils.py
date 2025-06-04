@@ -14,6 +14,9 @@ DATA_JSON = os.path.join(BASE_DATA_PATH, "datas.json")
 EMBEDDINGS_FILE = os.path.join(BASE_DATA_PATH, "embeddings.npy")
 METADATA_FILE = os.path.join(BASE_DATA_PATH, "metadata.pkl")
 FAISS_FILE = os.path.join(BASE_DATA_PATH, "faiss_index.index")
+USER_DATA_PATH = os.path.join("user_datas", "mail_password.json")
+LOGIN_PATH = os.path.join("user_datas", "login_data.json")
+
 
 # Modelin tekrar yüklenmesini önlemek için global bir değişken
 _model_instance = None
@@ -148,3 +151,43 @@ def add_question(soru, cevap):
     update_faiss_index(updated_embeddings) # Bu fonksiyon artık boş embeddingleri de ele alıyor
 
     print(f"✅ Yeni soru eklendi: '{soru}' (id: {new_id})")
+
+def validate_user_from_file(email: str, password: str) -> bool:
+    if not os.path.exists(USER_DATA_PATH):
+        print(f"🚨 Kullanıcı veri dosyası bulunamadı: {USER_DATA_PATH}")
+        return False
+
+    try:
+        with open(USER_DATA_PATH, "r", encoding="utf-8") as f:
+            users = json.load(f)
+            for user in users:
+                if user.get("email") == email and user.get("password") == password:
+                    return True
+            return False
+    except Exception as e:
+        print(f"🚨 Kullanıcı doğrulama hatası: {str(e)}")
+        return False
+
+def save_login_data(email, login_time):
+    os.makedirs(os.path.dirname(LOGIN_PATH), exist_ok=True)
+
+    # Önce dosya varsa oku, yoksa boş dict başlat
+    if os.path.exists(LOGIN_PATH):
+        with open(LOGIN_PATH, "r", encoding="utf-8") as f:
+            try:
+                data = json.load(f)
+            except json.JSONDecodeError:
+                data = {}
+    else:
+        data = {}
+
+    # Eğer kullanıcı daha önce login olmuşsa listeye ekle, yoksa yeni liste başlat
+    if email in data:
+        data[email].append(login_time)
+    else:
+        data[email] = [login_time]
+
+    # Güncellenmiş veriyi dosyaya kaydet
+    with open(LOGIN_PATH, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
+
